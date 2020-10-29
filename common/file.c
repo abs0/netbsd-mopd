@@ -630,6 +630,8 @@ CheckAOutFile(int fd)
 	if (read(fd, (char *)&ex, sizeof(ex)) != sizeof(ex))
 		return -1;
 
+	(void)lseek(fd, (off_t) 0, SEEK_SET);
+
 	memcpy(&ex_swap, &ex, sizeof(ex));
 	mopFileSwapX((u_char *)&ex_swap, 0, 4);
 
@@ -657,6 +659,8 @@ GetAOutFileInfo(struct dllist *dl)
 
 	if (read(dl->ldfd, (char *)&ex, sizeof(ex)) != sizeof(ex))
 		return(-1);
+
+	(void)lseek(dl->ldfd, (off_t) 0, SEEK_SET);
 
 	memcpy(&ex_swap, &ex, sizeof(ex));
 	mopFileSwapX((u_char *)&ex_swap, 0, 4);
