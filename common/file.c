@@ -352,8 +352,8 @@ getCLBYTES(int mid)
 	int	clbytes;
 
 	switch (mid) {
-	/* This works for Athena 4.3BSD. Is it valid for all mid == 0? */
-	case 0:
+	/* This works for Athena 4.3BSD. Is it valid for all MID_ZERO */
+	case MID_ZERO:
 #ifdef MID_VAX1K
 	case MID_VAX1K:
 #endif

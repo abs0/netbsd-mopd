@@ -129,8 +129,8 @@ main(int argc, char **argv)
 
 #ifndef NOAOUT
 	case IMAGE_TYPE_AOUT:
-		if (dl.a_mid == 0)
-			printf("WARNING: `%s' has mid=0\n", argv[1]);
+		if (dl.a_mid == MID_ZERO)
+			printf("WARNING: `%s' has MID_ZERO\n", argv[1]);
 		else if (dl.a_mid != MID_VAX && dl.a_mid != MID_VAX1K)
 			printf("WARNING: `%s' is not a VAX image (mid=%d)\n",
 			    argv[1], dl.a_mid);
